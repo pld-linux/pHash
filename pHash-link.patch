@@ -1,0 +1,10 @@
+--- pHash-0.9.6/src/Makefile.am.link	2015-11-09 19:45:06.853969444 +0100
++++ pHash-0.9.6/src/Makefile.am	2015-11-09 19:45:28.471019230 +0100
+@@ -1,6 +1,7 @@
+ lib_LTLIBRARIES = libpHash.la
+ libpHash_la_SOURCES = pHash.cpp
+ libpHash_la_LDFLAGS = -no-undefined
++libpHash_la_LIBADD = -lpthread
+ include_HEADERS = pHash.h
+ 
+ if HAVE_AUDIO_HASH
