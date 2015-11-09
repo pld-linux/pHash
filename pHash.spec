@@ -74,12 +74,14 @@ Statyczna biblioteka pHash.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cp examples/*.cpp $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+# obsoleted by .pc
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libpHash.la
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -p examples/*.cpp $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libpHash.so
-%{_libdir}/libpHash.la
 %{_includedir}/*.h
 %{_pkgconfigdir}/pHash.pc
 %{_examplesdir}/%{name}-%{version}
