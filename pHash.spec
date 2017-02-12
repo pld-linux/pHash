@@ -12,6 +12,7 @@ Source0:	http://www.phash.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	0572f3cfe2219a5537b78d3c5b78f84c
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-link.patch
+Patch2:		%{name}-ffmpeg.patch
 URL:		http://www.phash.org/
 BuildRequires:	CImg >= 1.6.7
 BuildRequires:	autoconf >= 2.61
@@ -60,6 +61,7 @@ Statyczna biblioteka pHash.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
