@@ -5,7 +5,7 @@
 Summary:	Perceptual hashing library
 Name:		pHash
 Version:	0.9.6
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		Libraries
 Source0:	http://www.phash.org/releases/%{name}-%{version}.tar.gz
